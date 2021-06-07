@@ -58,11 +58,11 @@ function dataTable(config, data) {
   const addBtn = document.querySelector("#add-btn");
   addBtn.addEventListener("click", (e) => {
     form.innerHTML = ` <label for="fname">name:</label>
-   <input type="text" id="fname" name="fname">
+   <input type="text" id="fname" name="fname" required>
    <label for="fsurname">surname:</label>
-   <input type="text" id="fsurname" name="fsurname">
+   <input type="text" id="fsurname" name="fsurname" required>
    <label for="fbirthdate">birth date:</label>
-   <input type="date" id="fbirth-date" name="birthdate">
+   <input type="date" id="fbirth-date" name="birthdate" required>
    <button id="add">add</button>`;
     const inpName = document.querySelector("#fname");
     const inpSurname = document.querySelector("#fsurname");
@@ -76,9 +76,6 @@ function dataTable(config, data) {
         inpSurname.value !== "" &&
         inpBirth.value !== ""
       ) {
-        console.log(inpName.value);
-        console.log(inpSurname.value);
-        console.log(inpBirth.value);
         sendData(inpName.value, inpSurname.value, inpBirth.value, maxId + 1);
       }
     });
